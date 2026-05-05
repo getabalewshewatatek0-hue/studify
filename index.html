@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Studify</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  
+  
+<div id="setupScreen">
+  <h1>Studify</h1>
+
+  <input id="totalTime" type="number" placeholder="Total time (minutes)">
+
+  <div id="subjects"></div>
+
+  <button onclick="addSubject()">+ Add Subject</button>
+  <button id="generateBtn" onclick="generatePlan()">Generate Plan</button>
+  <button id="startBtn" onclick="startStudy()">Start Studying</button>
+
+  <div id="result"></div>
+</div>
+
+<!-- FOCUS -->
+<div id="focusScreen" style="display:none;">
+  <h2 id="focusTitle"></h2>
+  <h1 id="focusTimer">00:00</h1>
+
+  <div class="progressBar">
+    <div id="progressFill"></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="pauseStudy()">Pause</button>
+    <button onclick="resumeStudy()">Resume</button>
+    <button onclick="skipSubject()"> Skip</button>
+  </div>
+</div>
+
+<!-- END -->
+<div id="endScreen" style="display:none;">
+  <h1>🎉 Session Complete!</h1>
+  <button onclick="restart()"> Restart</button>
+</div>
+
+<canvas id="confettiCanvas"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
