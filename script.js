@@ -11,11 +11,12 @@ function addSubject() {
 
   div.innerHTML = `
     <input placeholder="Subject name" class="name">
-    <select class="weight">
-      <option value="3">Hard</option>
-      <option value="2">Medium</option>
-      <option value="1">Easy</option>
-    </select>
+    <div class="difficulty-buttons">
+  <button onclick="setDifficulty(this, 1)">Easy</button>
+  <button onclick="setDifficulty(this, 2)">Medium</button>
+  <button onclick="setDifficulty(this, 3)">Hard</button>
+</div>
+<input type="hidden" class="weight" value="1">
     <button onclick="this.parentElement.remove()">✖</button>
   `;
 
@@ -289,4 +290,16 @@ function launchConfetti() {
       confetti.remove();
     }, 4000);
   }
+}
+function setDifficulty(btn, value) {
+  let parent = btn.parentElement.parentElement;
+
+  // remove active from all buttons
+  parent.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+
+  // activate clicked
+  btn.classList.add("active");
+
+  // set value
+  parent.querySelector(".weight").value = value;
 }
