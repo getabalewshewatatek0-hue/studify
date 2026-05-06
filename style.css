@@ -147,3 +147,21 @@ button {
 .shake {
   animation: shake 0.3s ease;
 }
+.difficulty-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.difficulty-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+}
+
+.difficulty-buttons button.active {
+  background: #00c853;
+}
